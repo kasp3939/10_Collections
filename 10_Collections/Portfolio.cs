@@ -43,12 +43,12 @@ namespace _10_Collections
 
         //public void AddAsset(IAsset Stock)
         //{
-        //    this.Assets.Add(Stock);
+        //    this.Assets.Add(Stock);   
         //}
 
         internal IList<IAsset> GetAssets()
         {
-            throw new NotImplementedException();
+            return stocks;
         }
 
         internal IAsset GetAssetByName(string name)
@@ -70,7 +70,8 @@ namespace _10_Collections
 
         internal IList<IAsset> GetAssetsSortedByValue()
         {
-            throw new NotImplementedException();
+            stocks.Sort(new StockNameComparator());
+            return stocks;
         }
     }
 }

@@ -8,21 +8,22 @@ namespace _10_Collections
 
 
     {
-
+        Dictionary<long, Stock> database = new Dictionary<long, Stock>();
         private long nextId;
         public void Clear()
         {
-            Clear();
+            database.Clear();
         }
 
         public ICollection FindAllStocks()
         {
-            throw new NotImplementedException();
+            return database;
         }
 
         public Stock LoadStock(long id)
         {
-            throw new NotImplementedException();
+            if(database.ContainsKey(id)) return database[id];
+			else return null;
         }
 
         public long NextId()
@@ -31,9 +32,10 @@ namespace _10_Collections
             return nextId;
         }
 
-        public void SaveStock(Stock yhoo)
+        public void SaveStock(Stock stock)
         {
-            throw new NotImplementedException();
+            database.Add(nextId, stock);
+            NextId();
         }
     }
 }

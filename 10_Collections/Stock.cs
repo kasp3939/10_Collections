@@ -70,17 +70,17 @@ namespace _10_Collections
         public override bool Equals(object obj)
         {
             Stock s = (Stock)obj;
-
+            
             return 
                 (Symbol == s.Symbol) &&
                 (PricePerShare == s.PricePerShare) &&
                 (NumShares == s.NumShares);
         }
 
-        internal static object TotalValue(IAsset[] portfolio)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static object TotalValue(IAsset[] portfolio)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public string GetName()
         {
