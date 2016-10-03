@@ -10,6 +10,8 @@ namespace _10_Collections
     {
         Dictionary<long, Stock> database = new Dictionary<long, Stock>();
         private long nextId;
+
+
         public void Clear()
         {
             database.Clear();

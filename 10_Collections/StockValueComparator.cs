@@ -8,17 +8,17 @@ namespace _10_Collections
         {
 
 
-            //int result = 0;
-            //if (first.GetValue().CompareTo(second.GetValue()) < 0)
-            //{
-            //    result = 1;
-            //}
-            //else if (first.GetValue().CompareTo(second.GetValue()) > 0)
-            //{
-            //    result = -1;
-            //}
-            //return result;
-            return second.GetValue().CompareTo(first.GetValue());
+            int result = 0;
+            if (first.GetValue().CompareTo(second.GetValue()) < 0)
+            {
+                result = 1;
+            }
+            else if (first.GetValue().CompareTo(second.GetValue()) > 0)
+            {
+                result = -1;
+            }
+            return result;
+            //return second.GetValue().CompareTo(first.GetValue());
 
         }
     }

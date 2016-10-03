@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace _10_Collections
 {
-    internal class Portfolio
+    internal class Portfolio 
     {
         public List<IAsset> stocks;
         public IAsset classInstance;
@@ -36,7 +36,7 @@ namespace _10_Collections
 
         }
 
-        public void AddAsset(Stock stockHP)
+        public void AddAsset(IAsset classInstance)
         {
             stocks.Add(classInstance);
         }
@@ -73,5 +73,7 @@ namespace _10_Collections
             stocks.Sort(new StockNameComparator());
             return stocks;
         }
+
+     
     }
 }
