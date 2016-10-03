@@ -40,9 +40,11 @@ namespace _10_Collections
 
         internal IList<IAsset> GetAssets()
         {
-            return stocks;
+            return stocks.AsReadOnly();
+
         }
 
+    
         //public void AddAsset(SavingsAccount cd1000)
         //{
         //    stocks.Add(classInstance);
