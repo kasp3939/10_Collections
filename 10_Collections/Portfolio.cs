@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Collections.ObjectModel;
 
 namespace _10_Collections
 {
-    internal class Portfolio 
+    internal class Portfolio : IAsset
     {
         public List<IAsset> stocks;
-        public IAsset classInstance;
-
+        //public IAsset classInstance;
         public object Assets { get; private set; }
 
         public Portfolio()
@@ -41,20 +38,20 @@ namespace _10_Collections
             stocks.Add(classInstance);
         }
 
-        //public void AddAsset(IAsset Stock)
-        //{
-        //    this.Assets.Add(Stock);   
-        //}
-
         internal IList<IAsset> GetAssets()
         {
             return stocks;
         }
 
+        //public void AddAsset(SavingsAccount cd1000)
+        //{
+        //    stocks.Add(classInstance);
+        //}
+
         internal IAsset GetAssetByName(string name)
         {
             IAsset element = null;
-            foreach(IAsset asset in stocks)
+            foreach (IAsset asset in stocks)
             {
                 if (asset.GetName().Equals(name))
                 { element = asset; }
@@ -70,10 +67,18 @@ namespace _10_Collections
 
         internal IList<IAsset> GetAssetsSortedByValue()
         {
-            stocks.Sort(new StockNameComparator());
+            stocks.Sort(new StockValueComparator());
             return stocks;
         }
 
-     
+        public double GetValue()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

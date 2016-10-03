@@ -1,24 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _10_Collections
 {
-    public class StockValueComparator
+    internal class StockValueComparator : IComparer<IAsset>
     {
-        internal int Compare(Stock first, Stock second)
+        public int Compare(IAsset first, IAsset second)
         {
 
 
-            int result = 0;
-            if (first.GetValue().CompareTo(second.GetValue()) < 0)
-            {
-                result = 1;
-            }
-            else if (first.GetValue().CompareTo(second.GetValue()) > 0)
-            {
-                result = -1;
-            }
-            return result;
-            //return second.GetValue().CompareTo(first.GetValue());
+            //int result = 0;
+            //if (first.GetValue().CompareTo(second.GetValue()) < 0)
+            //{
+            //    result = 1;
+            //}
+            //else if (first.GetValue().CompareTo(second.GetValue()) > 0)
+            //{
+            //    result = -1;
+            //}
+            //return result;
+            return second.GetValue().CompareTo(first.GetValue());
 
         }
     }
